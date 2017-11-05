@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="A2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="result">
+    <Key>
+      <PropertyRef Name="results_id" />
+    </Key>
+    <Property Name="results_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="student_id" Type="Int32" Nullable="false" />
+    <Property Name="unit_code" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="semester" Type="Byte" Nullable="false" />
+    <Property Name="year" Type="Int16" Nullable="false" />
+    <Property Name="assessment_1" Type="Int32" Nullable="false" />
+    <Property Name="assessment_2" Type="Int32" Nullable="false" />
+    <Property Name="exam" Type="Int32" Nullable="false" />
+    <Property Name="unit_mark" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="grade" Type="String" MaxLength="2" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="student" Relationship="Self.FK_result_student" FromRole="result" ToRole="student" />
+    <NavigationProperty Name="unit" Relationship="Self.FK_result_unit" FromRole="result" ToRole="unit" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="student_id" />
+    </Key>
+    <Property Name="student_id" Type="Int32" Nullable="false" />
+    <Property Name="student_first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="student_last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="results" Relationship="Self.FK_result_student" FromRole="student" ToRole="result" />
+  </EntityType>
+  <EntityType Name="unit">
+    <Key>
+      <PropertyRef Name="unit_code" />
+    </Key>
+    <Property Name="unit_code" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="unit_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="unit_coordinator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="unit_outline_pdf_document" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="results" Relationship="Self.FK_result_unit" FromRole="unit" ToRole="result" />
+  </EntityType>
+  <Association Name="FK_result_student">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="result" Type="Self.result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="student_id" />
+      </Principal>
+      <Dependent Role="result">
+        <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_result_unit">
+    <End Role="unit" Type="Self.unit" Multiplicity="1" />
+    <End Role="result" Type="Self.result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unit">
+        <PropertyRef Name="unit_code" />
+      </Principal>
+      <Dependent Role="result">
+        <PropertyRef Name="unit_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="results" EntityType="Self.result" />
+    <EntitySet Name="students" EntityType="Self.student" />
+    <EntitySet Name="units" EntityType="Self.unit" />
+    <AssociationSet Name="FK_result_student" Association="Self.FK_result_student">
+      <End Role="student" EntitySet="students" />
+      <End Role="result" EntitySet="results" />
+    </AssociationSet>
+    <AssociationSet Name="FK_result_unit" Association="Self.FK_result_unit">
+      <End Role="unit" EntitySet="units" />
+      <End Role="result" EntitySet="results" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

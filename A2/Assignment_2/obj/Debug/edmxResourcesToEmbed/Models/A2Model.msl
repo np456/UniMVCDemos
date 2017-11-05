@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="A2ModelStoreContainer" CdmEntityContainer="A2Entities">
+    <EntitySetMapping Name="results">
+      <EntityTypeMapping TypeName="A2Model.result">
+        <MappingFragment StoreEntitySet="result">
+          <ScalarProperty Name="results_id" ColumnName="results_id" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="unit_code" ColumnName="unit_code" />
+          <ScalarProperty Name="semester" ColumnName="semester" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="assessment_1" ColumnName="assessment_1" />
+          <ScalarProperty Name="assessment_2" ColumnName="assessment_2" />
+          <ScalarProperty Name="exam" ColumnName="exam" />
+          <ScalarProperty Name="unit_mark" ColumnName="unit_mark" />
+          <ScalarProperty Name="grade" ColumnName="grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="students">
+      <EntityTypeMapping TypeName="A2Model.student">
+        <MappingFragment StoreEntitySet="student">
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="student_first_name" ColumnName="student_first_name" />
+          <ScalarProperty Name="student_last_name" ColumnName="student_last_name" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="units">
+      <EntityTypeMapping TypeName="A2Model.unit">
+        <MappingFragment StoreEntitySet="unit">
+          <ScalarProperty Name="unit_code" ColumnName="unit_code" />
+          <ScalarProperty Name="unit_title" ColumnName="unit_title" />
+          <ScalarProperty Name="unit_coordinator" ColumnName="unit_coordinator" />
+          <ScalarProperty Name="unit_outline_pdf_document" ColumnName="unit_outline_pdf_document" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

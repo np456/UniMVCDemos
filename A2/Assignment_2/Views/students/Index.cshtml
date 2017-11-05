@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Assignment_2.Models.student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.student_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.student_first_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.student_last_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.photo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.student_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.student_first_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.student_last_name)
+        </td>
+        <td>
+            @*@@Html.DisplayFor(modelItem => item.photo)*@
+            <img src="@Url.Content(@item.photo)" height="40" width="40" />
+            @* @Html.ActionLink("model => model.photo","Index","students") *@
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.student_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.student_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.student_id })
+        </td>
+    </tr>
+}
+
+</table>

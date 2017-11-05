@@ -1,0 +1,51 @@
+﻿@model Assignment_2.Models.student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.student_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.student_id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.student_first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.student_first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.student_last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.student_last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.photo)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.photo)*@
+            <img src = "@Url.Content(@Model.photo)" height="40" width="40" />  
+            <!--<img src="~/Photos/me.jpg" height="40" width="30" />-->
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.student_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Assignment_2.Models.unit>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.unit_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unit_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unit_coordinator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unit_outline_pdf_document)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.unit_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unit_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unit_coordinator)
+        </td>
+        <td>
+         @*   @Html.DisplayFor(modelItem => item.unit_outline_pdf_document) *@
+            <a href="@Url.Content(@item.unit_outline_pdf_document)"> @item.unit_code @item.unit_title </a>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.unit_code }) |
+            @Html.ActionLink("Details", "Details", new { id=item.unit_code }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.unit_code })
+        </td>
+    </tr>
+}
+
+</table>

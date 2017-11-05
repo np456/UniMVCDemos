@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Student Results Management System</h1>
+    <p class="lead">Built with the latest Microsoft ASP.net technologies, ESM Technologies provides a basic, easy to use system to manage student results internally.</p>
+    <!--<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Manage Units", "Index", "units")</h2>
+        <p>Are you an Admin?</p>
+        <p>Click on the link to manage units.</p>
+        <!--<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>-->
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Manage Students", "Index", "students")</h2>
+        <p>Are you a Manager?</p>
+        <p>Click on the link to manage students.</p>
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("Manage Results", "Index", "results")</h2>
+        <p>Are you a Manager?</p>
+        <p>Click on the link to manage results.</p>
+    </div>
+    <div class="col-md-3">
+        <h2>@Html.ActionLink("View Reports", "Index", "reports")</h2>
+        <p>Are you a Manager?</p>
+        <p>Click on the link to view reports.</p>
+    </div>
+</div>

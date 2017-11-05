@@ -1,0 +1,90 @@
+﻿@model Assignment_2.Models.result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.student.student_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.student.student_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unit.unit_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unit_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.semester)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assessment_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assessment_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.assessment_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.assessment_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.exam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.exam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unit_mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unit_mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.results_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model Assignment_2.Models.unit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>unit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.unit_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unit_code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.unit_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unit_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unit_coordinator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unit_coordinator)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unit_outline_pdf_document)
+        </dt>
+
+        <dd>
+         @*   @Html.DisplayFor(model => model.unit_outline_pdf_document)  *@
+            <a href="@Url.Content(@Model.unit_outline_pdf_document)"> @Model.unit_code @Model.unit_title </a>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.unit_code }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
