@@ -14,16 +14,16 @@ namespace Assignment_2.Models
     
     public partial class result
     {
-        public int results_id { get; set; }
         public int student_id { get; set; }
         public string unit_code { get; set; }
         public byte semester { get; set; }
         public short year { get; set; }
-        public int assessment_1 { get; set; }
-        public int assessment_2 { get; set; }
         public int exam { get; set; }
         public Nullable<int> unit_mark { get; set; }
         public string grade { get; set; }
+        public int result_id { get; set; }
+        public int ass_1 { get; set; }
+        public int ass_2 { get; set; }
     
         public virtual student student { get; set; }
         public virtual unit unit { get; set; }

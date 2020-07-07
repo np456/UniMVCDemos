@@ -50,7 +50,7 @@ namespace Assignment_2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "results_id,student_id,unit_code,semester,year,assessment_1,assessment_2,exam,unit_mark,grade")] result result)
+        public ActionResult Create([Bind(Include = "result_id,student_id,unit_code,semester,year,ass_1,ass_2,exam,unit_mark,grade")] result result)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Assignment_2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "results_id,student_id,unit_code,semester,year,assessment_1,assessment_2,exam,unit_mark,grade")] result result)
+        public ActionResult Edit([Bind(Include = "result_id,student_id,unit_code,semester,year,ass_1,ass_2,exam,unit_mark,grade")] result result)
         {
             if (ModelState.IsValid)
             {

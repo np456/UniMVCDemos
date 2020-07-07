@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ESM Technlogies</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Manage Units</h2>
+        <p>Are you an Admin?</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Units", "Index", "Unit")</a></p>
+        <!--<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>-->
+    </div>
+    <div class="col-md-3">
+        <h2>Manage Students</h2>
+        <p>Are you a Manager?</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Students", "Index", "Student")</a></p>
+    </div>
+    <div class="col-md-3">
+        <h2>Manage Results</h2>
+        <p>Are you a Manager?</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Results", "Index", "Result")</a></p>
+    </div>
+    <div class="col-md-3">
+        <h2>View Reports</h2>
+        <p>Are you a Manager?</p>
+        <p><a class="btn btn-default" @Html.ActionLink("Reports", "Index", "Report")</a></p>
+    </div>
+</div>

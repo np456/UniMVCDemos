@@ -24,10 +24,10 @@
             @Html.DisplayNameFor(model => model.year)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.assessment_1)
+            @Html.DisplayNameFor(model => model.ass_1)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.assessment_2)
+            @Html.DisplayNameFor(model => model.ass_2)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.exam)
@@ -56,10 +56,10 @@
             @Html.DisplayFor(modelItem => item.year)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.assessment_1)
+            @Html.DisplayFor(modelItem => item.ass_1)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.assessment_2)
+            @Html.DisplayFor(modelItem => item.ass_2)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.exam)
@@ -71,9 +71,9 @@
             @Html.DisplayFor(modelItem => item.grade)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.results_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.results_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.results_id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.result_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.result_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.result_id })
         </td>
     </tr>
 }

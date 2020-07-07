@@ -26,11 +26,11 @@ namespace Assignment_2.Models
         [Required]
         [RegularExpression(@"^([0-9]|1[0-9]|20)$", ErrorMessage = "Assessment 1 mark must be between 0 and 20")]
         [Display(Name = "Assessment 1")]
-        public int assessment_1 { get; set; }
+        public int ass_1 { get; set; }
         [Required]
         [RegularExpression(@"^([0-9]|1[0-9]|20)$", ErrorMessage = "Assessment 2 mark must be between 0 and 20")]
         [Display(Name = "Assessment 2")]
-        public int assessment_2 { get; set; }
+        public int ass_2 { get; set; }
         [Required]
         [RegularExpression(@"^([0-9]|[1-5][0-9]|60)$", ErrorMessage = "Exam mark must be between 0 and 60")]
         [Display(Name = "Exam")]

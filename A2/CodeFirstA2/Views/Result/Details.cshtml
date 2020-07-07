@@ -1,0 +1,90 @@
+﻿@model CodeFirstA2.Models.Result
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit.UnitTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unit.UnitTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ass_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ass_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ass_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ass_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Exam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitMark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitMark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ResultId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

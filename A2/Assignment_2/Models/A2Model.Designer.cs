@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'F:\ECU Comp Sci Work\Applications development\Assignment_2\Assignment_2\Models\A2Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\nelso\Source\Repos\np456\CSI2441\A2\Assignment_2\Models\A2Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

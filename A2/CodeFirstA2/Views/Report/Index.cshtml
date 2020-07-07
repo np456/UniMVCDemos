@@ -1,0 +1,94 @@
+﻿@model IEnumerable<CodeFirstA2.Models.Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    @using (Html.BeginForm("Index", "Report", FormMethod.Get))
+    {
+<p>
+    Student ID: @Html.DropDownList("studentId", "All")
+    Unit Code: @Html.DropDownList("unitCode", "All")
+    Semester: @Html.DropDownList("semester", "All")
+    Year: @Html.DropDownList("year", "All")
+    Unit Score: @Html.DropDownList("unitScore", "All")
+
+    <input type="submit" value="Filter" />
+</p>
+<p>
+    @ViewBag.Message
+    @ViewBag.Message2
+</p>
+    }
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.StudentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit.UnitCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Semester)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ass_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ass_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Exam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitMark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grade)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.StudentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit.UnitCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ass_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ass_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitMark)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+        </tr>
+    }
+
+</table>
